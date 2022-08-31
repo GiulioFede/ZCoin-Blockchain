@@ -24,7 +24,7 @@ class Blockchain:
             Gli passiamo come argomenti 1 e '0' in quanto sono quelli per il blocco Genesis,
             ossia il primo blocco della Blockchain (dato che ne stiamo instanziando una)
         '''
-        self.create_block(nonce = 1, previous_hash = '0')
+        self.create_block(nonce = 1, prev_hash = '0')
     
     
     '_________________________________________________________________________________________________'
@@ -39,7 +39,7 @@ class Blockchain:
         block = {
                  'index', len(self.chain)+1, 
                  'timestamp', str(datetime.datetime.now()),
-                 'nonce', proof,
+                 'nonce', nonce,
                  'prev_hash', prev_hash
                 }
         
@@ -68,7 +68,8 @@ class Blockchain:
     '''
     def mine_block(self, previous_nonce):
         current_nonce = 1
-        check = False ' Quando è a True, è stato trovato un nonce corretto'
+        ' Creo variabile di controllo check. Quando è a True, è stato trovato un nonce corretto'
+        check = False 
         
         while check is False:
             '''

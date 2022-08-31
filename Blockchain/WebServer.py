@@ -11,7 +11,7 @@ blockchain = Blockchain.Blockchain()
 '''
     Creo un trigger. Quando contatto un certo url (es. da Postman) il web server farà partire la funzione
     alla quale tale url è collegata.
-    Quando avvio il server di default si collegherà al loop ip address 127.0.0.1:5000, pertanto ogni url che definisco,
+    Quando avvio il server (vedi funzione ultima) di default si collegherà al loop ip address 127.0.0.1:5000, pertanto ogni url che definisco,
     dovrà solo contenere il path
 '''
 
@@ -49,8 +49,15 @@ def get_full_blockchain():
                 'number of total blocks': len(blockchain.chain)}
 
     return jsonify(response), 200         
-        
-        
+
+
+
+'''
+Avvio web app su ip address e porta specifici. Utilizzo 0.0.0.0 invece di 127.0.0.1 cosi che se il nodo ha più indirizzi ip
+(es. 3), il web server (questo) che gira su di esso verrà contattato sempre qualsiasi indirizzo ip utilizziamo (es. con Postman) 
+per contattare il nodo.
+'''
+app.run(host='0.0.0.0', port = 2500)
         
         
         
