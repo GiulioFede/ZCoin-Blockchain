@@ -14,7 +14,7 @@ class Blockchain:
     '''Alla creazione della nostra Blockchain dovremmo inizializzare un pò di cose. La 
        funzione __init__ è la prima a partire ogni volta che creiamo una instanza Blockchain
     '''
-    def __init__ (self): 'con self ci riferiamo alla instanza corrente
+    def __init__ (self): 
         
         ' La chain è una lista che contiene tutti i blocchi della Blockchain '
         self.chain = []
