@@ -41,8 +41,14 @@ def mine_new_block():
                 }
     return jsonify(response), 200
             
-        
-        
+
+' Get the full blockchain'
+@app.route('/get_full_blockchain', methods=['GET'])
+def get_full_blockchain():
+    response = {'blocks': blockchain.chain,
+                'number of total blocks': len(blockchain.chain)}
+
+    return jsonify(response), 200         
         
         
         
