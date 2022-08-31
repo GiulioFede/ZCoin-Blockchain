@@ -37,10 +37,10 @@ class Blockchain:
         
         'Campi del blocco'
         block = {
-                 'index', len(self.chain)+1, 
-                 'timestamp', str(datetime.datetime.now()),
-                 'nonce', nonce,
-                 'prev_hash', prev_hash
+                 'index': len(self.chain)+1, 
+                 'timestamp': str(datetime.datetime.now()),
+                 'nonce': nonce,
+                 'prev_hash': prev_hash
                 }
         
         'Aggiungo il blocco alla Blockchain'

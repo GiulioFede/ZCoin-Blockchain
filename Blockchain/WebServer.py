@@ -5,6 +5,8 @@ from flask import Flask, jsonify
 'Creo Web App'
 app = Flask(__name__)
 
+'''app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False'''
+
 'Creo una istanza della Blockchain'
 blockchain = Blockchain.Blockchain()
 
@@ -46,8 +48,9 @@ def mine_new_block():
 @app.route('/get_full_blockchain', methods=['GET'])
 def get_full_blockchain():
     response = {'blocks': blockchain.chain,
-                'number of total blocks': len(blockchain.chain)}
-
+                'number of total blocks': len(blockchain.chain)
+                }
+    print("invio blockchain: \n ", response)
     return jsonify(response), 200         
 
 
