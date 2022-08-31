@@ -148,7 +148,7 @@ class Blockchain:
             current_block = chain[current_block_index]
             
             'Controllo se è valido'
-            check_block_validity = is_block_valid(self, current_block, hash_block(prev_block), prev_block['nonce'])
+            check_block_validity = is_block_valid(current_block, hash_block(prev_block), prev_block['nonce'])
             'Se è invalido, la catena è non valida'
             if check_block_validity is False:
                 return False
